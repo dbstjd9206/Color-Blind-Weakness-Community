@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestdori</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 10px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .slider-container {
+            max-width: 600px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .slide {
+            flex: 0 0 100%;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>제목</h1>
+    </nav>
+
+    <nav2>
+        <a href="main.html">Home</a>
+        <a href="#">추가1</a>
+        <a href="#">추가2</a>
+        <a href="#">추가3</a>
+        <a href="#">추가4</a>
+    </nav2>
+
+    <section>
+        <h2>Image Slider</h2>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide"><img src="img1.jpg" alt="Image 1"></div>
+                <div class="slide"><img src="img2.jpg" alt="Image 2"></div>
+                <div class="slide"><img src="img3.jpg" alt="Image 3"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let slider = document.querySelector('.slider');
+        let slides = document.querySelectorAll('.slide');
+        let slideIndex = 0;
+
+        setInterval(() => {
+            slideIndex = (slideIndex + 1) % slides.length;
+            slider.style.transform = `translateX(-${slideIndex * 100}%)`;
+        }, 3000);
+    </script>
+</body>
+</html>
